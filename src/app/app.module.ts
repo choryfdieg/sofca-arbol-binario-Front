@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 
 import { ServiceService } from './Service/service.service';
 
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { EditarComponent } from './Persona/editar/editar.component';
 
 @NgModule({
@@ -20,13 +20,7 @@ import { EditarComponent } from './Persona/editar/editar.component';
     AgregarComponent,
     EditarComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClient,
-    HttpClientModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [ServiceService],
   bootstrap: [AppComponent]
 })

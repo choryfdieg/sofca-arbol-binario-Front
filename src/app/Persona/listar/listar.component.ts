@@ -34,6 +34,7 @@ export class ListarComponent implements OnInit {
   }
 
   BuscarByDocumento() {
+    this.documento = this.documento.replace(/[^0-9]/g, '');
     this.service.getClienteByDocumento(this.documento).subscribe(data => {
       this.clientes = [data];
     });
