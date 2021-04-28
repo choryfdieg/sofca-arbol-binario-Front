@@ -29,6 +29,9 @@ export class AgregarComponent implements OnInit {
 
     this.cliente.documento = this.cliente.documento.replace(/[^0-9]/g, '');
 
-    this.service.crearCliente(this.cliente).subscribe(data => {});
+    this.service.crearCliente(this.cliente).subscribe(data => {
+      this.mensaje = 'Datos almacenados correctamente';
+      this.error = false;
+    });
   }
 }

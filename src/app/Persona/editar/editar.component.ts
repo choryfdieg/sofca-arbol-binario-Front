@@ -11,9 +11,13 @@ export class EditarComponent implements OnInit {
 
   cliente: Cliente = new Cliente();
   titulo:String;
+  mensaje: string;
+  error: boolean;
 
   constructor(private service: ServiceService) {
     this.titulo = '';
+    this.mensaje = '';
+    this.error = false;
   }
 
   ngOnInit(): void {
@@ -33,7 +37,8 @@ export class EditarComponent implements OnInit {
   Actualizar(){
 
     this.service.actualizarCliente(this.cliente).subscribe(data => {
-
+      this.mensaje = 'Datos almacenados correctamente';
+      this.error = false;
     })
 
   }
